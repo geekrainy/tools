@@ -1,0 +1,15 @@
+Windows Registry Editor Version 5.00
+[HKEY_CLASSES_ROOT\*\shell\runas-]
+@="恢复原始权限"
+"Icon"="C:\\Windows\\System32\\imageres.dll,101"
+"NoWorkingDirectory"=""
+[HKEY_CLASSES_ROOT\*\shell\runas-\command]
+@="cmd.exe /c takeown /f \"%1\" && icacls \"%1\" /reset && cacls \"%1\" /e /r \"%%USERNAME%%\""
+"IsolatedCommand"="cmd.exe /c takeown /f \"%1\" && icacls \"%1\" /reset && cacls \"%1\" /e /r \"%%USERNAME%%\""
+[HKEY_CLASSES_ROOT\Directory\shell\runas-]
+@="恢复原始权限"
+"Icon"="C:\\Windows\\System32\\imageres.dll,101"
+"NoWorkingDirectory"=""
+[HKEY_CLASSES_ROOT\Directory\shell\runas-\command]
+@="cmd.exe /c takeown /f \"%1\" /r /d y && icacls \"%1\" /reset && cacls \"%1\" /e /r \"%%USERNAME%%\""
+"IsolatedCommand"="cmd.exe /c takeown /f \"%1\" /r /d y && icacls \"%1\" /reset && cacls \"%1\" /e /r \"%%USERNAME%%\""
